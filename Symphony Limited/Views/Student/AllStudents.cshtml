@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Student>
+@{
+    Layout = "~/Views/shared/_LayoutDashboard.cshtml";
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">All Students Details</h4>
+                        <p class="card-description">
+                            <a asp-controller="Student" asp-action="AddStudents">Add new details</a>
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Student Id</th>
+                                        <th>Roll Number</th>
+                                        <th>Student Name</th>
+                                        <th>Marks</th>
+                                        <th>Class Assigned</th>
+                                        <th>Fees Paid</th>
+                                        <th>Created At</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var student in Model)
+                                    {
+                                                <tr>
+
+                                                <td>@student.Student_Id</td>
+                                                <td>@student.RollNumber</td>
+                                                <td>@student.StudentName</td>
+                                                <td>@student.Marks</td>
+                                                <td>@student.Class_Assigned</td>
+                                                <td>@student.Fees_Paid</td>
+                                                <td>@student.Created_At</td>
+                                                <td>
+                                                    <a class="btn btn-outline-primary" asp-controller="Student" asp-action="EditStudent" asp-route-id="@student.Student_Id">Edit</a>
+                                                    <form class="mt-3" method="post">
+                                                        <button class="btn btn-outline-danger" type="submit" asp-controller="Student" asp-action="DeleteStudent" asp-route-id="@student.Student_Id">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

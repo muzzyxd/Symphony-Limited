@@ -1,0 +1,90 @@
+﻿@model Course
+@{
+	Layout = "~/Views/shared/_LayoutDashboard.cshtml";
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Add Course</h4>
+            <p class="card-description">
+                Basic form elements
+            </p>
+            <form class="forms-sample" asp-action="ShowCourse" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputName1">Name</label>
+                    <input type="text" class="form-control" asp-for="CourseName" id="exampleInputName1" placeholder="Enter Course Name">
+                </div>
+                <div class="message-box pd-x-28 error">
+                   <span asp-validation-for="CourseName"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">Course Description</label>
+                    <textarea class="form-control" asp-for="CourseDescription" id="exampleTextarea1" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Duration</label>
+                    <input type="text" class="form-control" asp-for="Duration" id="exampleInputPassword4" placeholder="Duration">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Fees</label>
+                    <input type="text" class="form-control" asp-for="Fees" id="exampleInputPassword4" placeholder="Fees">
+                </div>
+                
+                <div class="form-group">
+                    <label>Image upload</label>
+                    <input type="file" asp-for="CourseImg" class="file-upload-default">
+                    <div class="input-group col-xs-12">
+                        <input type="file" class="form-control file-upload-info" placeholder="Upload Image">
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputCity1">Created At</label>
+                    <input type="date" class="form-control" asp-for="Created_at" id="exampleInputCity1" placeholder="Created At">
+                </div>
+                 <input type="submit" class="btn btn-primary mr-2" value="Add Course" />
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+@*
+<h2 class="text-center">Add Course</h2>
+
+<a class="mb-5" asp-controller="Course" asp-action="ShowCourse">See all products</a>
+
+<form asp-action="ShowCourse" method="post">
+	<div class="mb-3">
+		<input class="form-control" asp-for="CourseName" placeholder="Enter Name" />
+	</div>
+
+	<div class="mb-3">
+		<input class="form-control" asp-for="CourseDescription" placeholder="Enter Descriprion" />
+	</div>
+
+	<div class="mb-3">
+		<input class="form-control" asp-for="Duration" placeholder="Enter Duration" />
+	</div>
+
+	<div class="mb-3">
+		<input class="form-control" asp-for="Fees" placeholder="Enter Fees" />
+	</div>
+	<div class="mb-3">
+		<input type="file" class="form-control" asp-for="CourseImg"/>
+	</div>
+	<div class="mb-3">
+		<input class="form-control" asp-for="Created_at" />
+	</div>
+
+	<div class="mb-3">
+		<button type="submit" class="btn btn-primary">Add Course</button>
+	</div>
+</form>*@

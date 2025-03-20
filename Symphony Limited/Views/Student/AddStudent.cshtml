@@ -1,0 +1,49 @@
+﻿@model Symphony_Limited.Models.Student;
+@{
+    Layout = "~/Views/shared/_LayoutDashboard.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add Student Details</h4>
+                        <p class="card-description">
+                            
+                        </p>
+                        <form class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputName1">Student Roll No</label>
+                                <input type="text" class="form-control" asp-for="RollNumber" id="exampleInputName1" placeholder="Student Roll Number">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Student Name</label>
+                                <input type="text" class="form-control" asp-for="StudentName" id="exampleTextarea1" placeholder="Student Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword4">Student Marks</label>
+                                <input type="number" class="form-control" asp-for="Marks" id="exampleInputPassword4" placeholder="Student Marks">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Class Assigned</label>
+                                <input type="text" class="form-control" asp-for="Class_Assigned" id="exampleInputCity1" placeholder="Class Assigned">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Fees Paid</label>
+                                <input type="number" class="form-control" asp-for="Fees_Paid" id="exampleInputCity1" placeholder="Fees Paid">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Created At</label>
+                                <input type="date" class="form-control" asp-for="Created_At" id="exampleInputCity1" placeholder="Created At">
+                            </div>
+                            <input type="submit" class="btn btn-primary mr-2" value="Add Details" />
+                            <button class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

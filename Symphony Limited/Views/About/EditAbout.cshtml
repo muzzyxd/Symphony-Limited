@@ -1,0 +1,34 @@
+﻿@model About
+@{
+    Layout = "~/Views/shared/_LayoutDashboard.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Update Content</h4>
+                        <p class="card-description">
+
+                        </p>
+                        <form class="forms-sample" method="post">
+                            <input type="hidden" class="form-control" asp-for="About_Id" />
+                            <div class="form-group">
+                                <label for="exampleInputName1">About Us Content</label>
+                                <input type="text" class="form-control" asp-for="Content" id="exampleInputName1" placeholder="Enter About Us Content">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Created At</label>
+                                <input type="date" class="form-control" asp-for="Created_At" id="exampleInputCity1" placeholder="Created At">
+                            </div>
+                            <input type="submit" class="btn btn-primary mr-2" value="Update Content" />
+                            <button class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

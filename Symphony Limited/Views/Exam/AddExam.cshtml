@@ -1,0 +1,41 @@
+﻿@model Symphony_Limited.Models.Examination;
+@{
+	Layout = "~/Views/shared/_LayoutDashboard.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add Exam</h4>
+                        <p class="card-description">
+                            Basic form elements
+                        </p>
+                        <form class="forms-sample"  method="post">
+                            <div class="form-group">
+                                <label for="exampleInputName1">Exam Name</label>
+                                <input type="text" class="form-control" asp-for="ExamName" id="exampleInputName1" placeholder="Enter Course Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Exam Date</label>
+                                <input type="date" class="form-control" asp-for="ExamDate" id="exampleTextarea1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword4">Fees</label>
+                                <input type="text" class="form-control" asp-for="Fees" id="exampleInputPassword4" placeholder="Duration">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Created At</label>
+                                <input type="date" class="form-control" asp-for="Created_at" id="exampleInputCity1" placeholder="Created At">
+                            </div>
+                            <input type="submit" class="btn btn-primary mr-2" value="Add Exam" />
+                            <button class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@model Faq
+@{
+    Layout = "~/Views/shared/_LayoutDashboard.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Update Faqs</h4>
+                        <p class="card-description">
+
+                        </p>
+                        <form class="forms-sample" method="post">
+                            <input type="hidden" class="form-control" asp-for="Faq_Id" />
+                            <div class="form-group">
+                                <label for="exampleInputName1">Faqs Question</label>
+                                <input type="text" class="form-control" asp-for="Question" id="exampleInputName1" placeholder="Faqs Question">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Faqs Answer</label>
+                                <input type="text" class="form-control" asp-for="Answer" id="exampleInputName1" placeholder="Faqs Answer">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Created At</label>
+                                <input type="date" class="form-control" asp-for="Created_At" id="exampleInputCity1" placeholder="Created At">
+                            </div>
+                            <input type="submit" class="btn btn-primary mr-2" value="Update Faqs" />
+                            <button class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

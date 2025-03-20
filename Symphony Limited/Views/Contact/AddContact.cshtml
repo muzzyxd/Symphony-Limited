@@ -1,0 +1,41 @@
+﻿@model Contact
+@{
+    Layout = "~/Views/shared/_LayoutDashboard.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add Contact</h4>
+                        <p class="card-description">
+
+                        </p>
+                        <form class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputName1">Branch Name</label>
+                                <input type="text" class="form-control" asp-for="BranchName" id="exampleInputName1" placeholder="Enter Branch Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Address</label>
+                                <input type="text" class="form-control" asp-for="Address" id="exampleInputName1" placeholder="Enter Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName1">Phone Number</label>
+                                <input type="text" class="form-control" asp-for="PhoneNumber" id="exampleInputName1" placeholder="Enter Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCity1">Created At</label>
+                                <input type="date" class="form-control" asp-for="Created_at" id="exampleInputCity1" placeholder="Created At">
+                            </div>
+                            <input type="submit" class="btn btn-primary mr-2" value="Add Contact" />
+                            <button class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

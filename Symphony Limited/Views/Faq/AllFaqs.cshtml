@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Faq>
+@{
+    Layout = "~/Views/shared/_LayoutDashboard.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">All Faqs</h4>
+                        <p class="card-description">
+                            <a asp-controller="Faq" asp-action="AddFaq">Add new faq</a>
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Faq Id</th>
+                                        <th>Question</th>
+                                        <th>Answer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var faq in Model)
+                                    {
+                                        <tr>
+                                            <td>@faq.Faq_Id</td>
+                                            <td>@faq.Question</td>
+                                            <td>@faq.Answer</td>
+                                            <td>
+                                                <a class="btn btn-outline-primary" asp-controller="Faq" asp-action="EditFaq" asp-route-id="@faq.Faq_Id">Edit</a>
+                                                <form class="mt-3" method="post">
+                                                    <button class="btn btn-outline-danger" type="submit" asp-controller="Faq" asp-action="DeleteFaq" asp-route-id="@faq.Faq_Id">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
