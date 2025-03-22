@@ -154,3 +154,4 @@ C:\Users\Muzzy\source\repos\Symphony Limited\Symphony Limited\obj\Debug\net8.0\r
 C:\Users\Muzzy\source\repos\Symphony Limited\Symphony Limited\obj\Debug\net8.0\Symphony Limited.pdb
 C:\Users\Muzzy\source\repos\Symphony Limited\Symphony Limited\obj\Debug\net8.0\Symphony Limited.genruntimeconfig.cache
 C:\Users\Muzzy\source\repos\Symphony Limited\Symphony Limited\obj\Debug\net8.0\ref\Symphony Limited.dll
+C:\Users\Muzzy\source\repos\Symphony Limited\Symphony Limited\obj\Debug\net8.0\Symphony Limited.sourcelink.json

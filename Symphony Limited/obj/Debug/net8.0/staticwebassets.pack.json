@@ -605,6 +605,10 @@
       "PackagePath": "staticwebassets\\Admin\\images\\faces\\face9.jpg"
     },
     {
+      "Id": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\wwwroot\\Admin\\images\\faces\\profile-icon.jpg",
+      "PackagePath": "staticwebassets\\Admin\\images\\faces\\profile-icon.jpg"
+    },
+    {
       "Id": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\wwwroot\\Admin\\images\\favicon.png",
       "PackagePath": "staticwebassets\\Admin\\images\\favicon.png"
     },
@@ -7143,6 +7147,10 @@
     {
       "Id": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\wwwroot\\images\\aboutus.jpeg",
       "PackagePath": "staticwebassets\\images\\aboutus.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\wwwroot\\images\\faqs.jpg",
+      "PackagePath": "staticwebassets\\images\\faqs.jpg"
     },
     {
       "Id": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\wwwroot\\images\\gal_1.jpg",

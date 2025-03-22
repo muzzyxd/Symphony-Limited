@@ -32,5 +32,7 @@ namespace Symphony_Limited.Data
         public DbSet<About> Abouts { get; set; }
 
         public DbSet<Contact> Contacts { get; set; }
+
+        public DbSet<Feedback> Feedbacks { get; set; }
     }
 }

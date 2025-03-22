@@ -148,6 +148,7 @@ wwwroot\Admin\images\faces\face6.jpg
 wwwroot\Admin\images\faces\face7.jpg
 wwwroot\Admin\images\faces\face8.jpg
 wwwroot\Admin\images\faces\face9.jpg
+wwwroot\Admin\images\faces\profile-icon.jpg
 wwwroot\Admin\images\favicon.png
 wwwroot\Admin\images\file-icons\128\001-interface-1.png
 wwwroot\Admin\images\file-icons\128\002-tool.png
@@ -1783,6 +1784,7 @@ wwwroot\images\about_1.jpg
 wwwroot\images\about_2.jpg
 wwwroot\images\aboutus.jpeg
 wwwroot\images\Ai best it intitute.jpeg
+wwwroot\images\faqs.jpg
 wwwroot\images\gal_1.jpg
 wwwroot\images\gal_2.jpg
 wwwroot\images\gal_3.jpg

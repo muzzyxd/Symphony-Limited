@@ -7,10 +7,10 @@
                     <div class="col-lg-6 text-center ">
                         <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">About Us</h1>
                         <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
-                            <p>Another free template by <a href="https://untree.co/" target="_blank" class="link-highlight">Untree.co</a>. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.</p>
+                            <p>Join us at Symphony Ltd. and take the first step towards building a successful career in the IT industry. We are here to guide you every step of the way!</p>
                         </div>
 
-                        <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-secondary">Explore courses</a></p>
+                        <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a asp-controller="Admin" asp-action="Register" class="btn btn-secondary">Explore courses</a></p>
 
                     </div>
 
@@ -63,7 +63,10 @@
         <div class="row justify-content-between">
             <div class="col-lg-5 mb-5">
                 <h2 class="line-bottom mb-4" data-aos="fade-up" data-aos-delay="0">About Us</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                @foreach(var about in Model)
+                {
+                    <p data-aos="fade-up" data-aos-delay="100">@about.Content</p>
+                }
                 <ul class="list-unstyled ul-check mb-5 primary" data-aos="fade-up" data-aos-delay="200">
                     <li>Separated they live</li>
                     <li>Bookmarksgrove right at the coast</li>
@@ -86,8 +89,7 @@
                 </div>
 
                 <p data-aos="fade-up" data-aos-delay="200">
-                    <a href="#" class="btn btn-primary mr-1">Admission</a>
-                    <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    <a asp-controller="Admin" asp-action="Register" class="btn btn-primary mr-1">Admission</a>
                 </p>
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
@@ -104,11 +106,9 @@
     <div class="row justify-content-between">
         <div class="col mb-5">
             <h2 class="line-bottom mb-4" data-aos="fade-up" data-aos-delay="0">CAREER OPPORTUNITIES</h2>
-            @foreach (var about in Model)
-            {
-                <p data-aos="fade-up" data-aos-delay="100">@about.Content
-                    @*For nearly 2 decades, SYMPHONY LIMITED has been dedicated to redefining higher IT education and empowering our students with the skills they need to excel in the classrooms and throughout their professional sphere keeping a career-oriented approach. Seeking to equip our students with essential management competencies, coupled with an appreciation of professional accountability and social responsibility, the institute has developed programs that prepare professionals for meaningful careers*@</p>
-            }
+                <p data-aos="fade-up" data-aos-delay="100">
+                    For nearly 2 decades, SYMPHONY LIMITED has been dedicated to redefining higher IT education and empowering our students with the skills they need to excel in the classrooms and throughout their professional sphere keeping a career-oriented approach. Seeking to equip our students with essential management competencies, coupled with an appreciation of professional accountability and social responsibility, the institute has developed programs that prepare professionals for meaningful careers.</p>
+
         </div>
     </div>
     <div class="row justify-content-between">
@@ -129,65 +129,6 @@
         </div>
     </div>
 </div>
-
-
-<div class="untree_co-section bg-light">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
-                <h2 class="line-bottom text-center mb-4">Our Team</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-                <div class="staff text-center">
-                    <div class="mb-4"><img src="~/images/staff_1.jpg" alt="Image" class="img-fluid"></div>
-                    <div class="staff-body">
-                        <h3 class="staff-name">Mina Collins</h3>
-                        <span class="d-block position mb-4">Teacher in Math</span>
-                        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <div class="social">
-                            <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
-                            <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
-                            <a href="#" class="mx-2"><span class="icon-linkedin"></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="staff text-center">
-                    <div class="mb-4"><img src="~/images/staff_2.jpg" alt="Image" class="img-fluid"></div>
-                    <div class="staff-body">
-                        <h3 class="staff-name">Anderson Matthew</h3>
-                        <span class="d-block position mb-4">Teacher in Music</span>
-                        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <div class="social">
-                            <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
-                            <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
-                            <a href="#" class="mx-2"><span class="icon-linkedin"></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="staff text-center">
-                    <div class="mb-4"><img src="~/images/staff_3.jpg" alt="Image" class="img-fluid"></div>
-                    <div class="staff-body">
-                        <h3 class="staff-name">Cynthia Misso</h3>
-                        <span class="d-block position mb-4">Teacher English</span>
-                        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <div class="social">
-                            <a href="#" class="mx-2"><span class="icon-facebook"></span></a>
-                            <a href="#" class="mx-2"><span class="icon-twitter"></span></a>
-                            <a href="#" class="mx-2"><span class="icon-linkedin"></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> <!-- /.untree_co-section -->
 
 
 @*

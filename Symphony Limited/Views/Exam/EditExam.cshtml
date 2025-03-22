@@ -10,14 +10,12 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Update Exam</h4>
-                    <p class="card-description">
-  
-                    </p>
-                    <form class="forms-sample" asp-action="AllExams" method="post">
+                    
+                    <form class="forms-sample" method="post">
                             <input type="hidden" class="form-control" asp-for="ExamId">
                         <div class="form-group">
                             <label for="exampleInputName1">Exam Name</label>
-                            <input type="text" class="form-control" asp-for="ExamName" id="exampleInputName1" placeholder="Enter Course Name">
+                            <input type="text" class="form-control" asp-for="ExamName" id="exampleInputName1" placeholder="Enter Exam Name">
                         </div>
                         <div class="form-group">
                             <label for="exampleTextarea1">Exam Date</label>
@@ -25,7 +23,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword4">Fees</label>
-                            <input type="text" class="form-control" asp-for="Fees" id="exampleInputPassword4" placeholder="Duration">
+                            <input type="text" class="form-control" asp-for="Fees" id="exampleInputPassword4" placeholder="Fees">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputCity1">Created At</label>

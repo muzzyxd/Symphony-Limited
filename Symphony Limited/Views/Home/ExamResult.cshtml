@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Student>
+<div class="untree_co-hero overlay" style="background-image: url('images/img-school-1-min.jpg');">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12">
+                <div class="row justify-content-center ">
+                    <div class="col-lg-6 text-center ">
+                        <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Exam Result</h1>
+                        <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+</div> <!-- /.untree_co-hero -->
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title text-center">Exam Results</h4>
+            <div class="table-responsive pt-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Student Id</th>
+                            <th>Roll Number</th>
+                            <th>Student Name</th>
+                            <th>Marks</th>
+                            <th>Class Assigned</th>
+                            <th>Fees Paid</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var student in Model)
+                                    {
+                                                <tr>
+
+                                                <td>@student.Student_Id</td>
+                                                <td>@student.RollNumber</td>
+                                                <td>@student.StudentName</td>
+                                                <td>@student.Marks</td>
+                                                <td>@student.Class_Assigned</td>
+                                                <td>@student.Fees_Paid</td>
+                                                    </tr>
+                             }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>

@@ -367,6 +367,38 @@ namespace Symphony_Limited.Migrations
                     b.ToTable("Faqs");
                 });
 
+            modelBuilder.Entity("Symphony_Limited.Models.Feedback", b =>
+                {
+                    b.Property<int>("Feedback_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Feedback_Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("UserFeedback")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("YourName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Feedback_Id");
+
+                    b.ToTable("Feedbacks");
+                });
+
             modelBuilder.Entity("Symphony_Limited.Models.Student", b =>
                 {
                     b.Property<int>("Student_Id")
