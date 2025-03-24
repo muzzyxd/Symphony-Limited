@@ -436,26 +436,45 @@ namespace Symphony_Limited.Migrations
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("Symphony_Limited.Models.Topic", b =>
+            modelBuilder.Entity("Symphony_Limited.Models.Subject", b =>
                 {
-                    b.Property<int>("TopicId")
+                    b.Property<int>("Subject_Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TopicId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Subject_Id"));
 
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("datetime")
+                        .HasColumnName("Created_at");
 
-                    b.Property<string>("TopicName")
+                    b.Property<string>("Duration")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("Duration");
 
-                    b.HasKey("TopicId");
+                    b.Property<decimal>("Fees")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
 
-                    b.HasIndex("CourseId");
+                    b.Property<string>("SubjectDescription")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Subject Description");
 
-                    b.ToTable("Topics");
+                    b.Property<string>("SubjectImgName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("SubjectName")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("Subject Name");
+
+                    b.HasKey("Subject_Id");
+
+                    b.ToTable("Subjects");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -507,22 +526,6 @@ namespace Symphony_Limited.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Symphony_Limited.Models.Topic", b =>
-                {
-                    b.HasOne("Symphony_Limited.Models.Course", "Course")
-                        .WithMany("Topics")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Course");
-                });
-
-            modelBuilder.Entity("Symphony_Limited.Models.Course", b =>
-                {
-                    b.Navigation("Topics");
                 });
 #pragma warning restore 612, 618
         }

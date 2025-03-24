@@ -13,7 +13,5 @@ namespace Symphony_Limited.Models
         // Foreign key
         public int CourseId { get; set; }
 
-        // Navigation property
-        public Course Course { get; set; }
     }
 }

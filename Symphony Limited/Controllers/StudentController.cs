@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Symphony_Limited.Data;
+using Symphony_Limited.Migrations;
 using Symphony_Limited.Models;
 
 namespace Symphony_Limited.Controllers
@@ -72,6 +73,6 @@ namespace Symphony_Limited.Controllers
             }
             return RedirectToAction("AllStudents");
         }
-
-    }
+   
+    } 
 }

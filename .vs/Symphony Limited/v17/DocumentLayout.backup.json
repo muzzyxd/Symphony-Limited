@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AAD88DFA-E81C-44A9-87C0-B208532E9F76}|Symphony Limited\\Symphony Limited.csproj|c:\\users\\muzzy\\source\\repos\\symphony limited\\symphony limited\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AAD88DFA-E81C-44A9-87C0-B208532E9F76}|Symphony Limited\\Symphony Limited.csproj|solutionrelative:symphony limited\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAD88DFA-E81C-44A9-87C0-B208532E9F76}|Symphony Limited\\Symphony Limited.csproj|c:\\users\\muzzy\\source\\repos\\symphony limited\\symphony limited\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAD88DFA-E81C-44A9-87C0-B208532E9F76}|Symphony Limited\\Symphony Limited.csproj|solutionrelative:symphony limited\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AAD88DFA-E81C-44A9-87C0-B208532E9F76}|Symphony Limited\\Symphony Limited.csproj|c:\\users\\muzzy\\source\\repos\\symphony limited\\symphony limited\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AAD88DFA-E81C-44A9-87C0-B208532E9F76}|Symphony Limited\\Symphony Limited.csproj|solutionrelative:symphony limited\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Symphony Limited\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Symphony Limited\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAYwE0AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T06:51:00.487Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Contact.cshtml",
-              "DocumentMoniker": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\Views\\Home\\Contact.cshtml",
-              "RelativeDocumentMoniker": "Symphony Limited\\Views\\Home\\Contact.cshtml",
-              "ToolTip": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\Views\\Home\\Contact.cshtml",
-              "RelativeToolTip": "Symphony Limited\\Views\\Home\\Contact.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAABqAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Symphony Limited\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Muzzy\\source\\repos\\Symphony Limited\\Symphony Limited\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Symphony Limited\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEkAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-22T06:05:54.536Z",
+              "WhenOpened": "2025-03-24T07:20:03.659Z",
               "EditorCaption": ""
             }
           ]

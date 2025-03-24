@@ -12,17 +12,6 @@ namespace Symphony_Limited.Data
         }
         public DbSet<Course> Courses { get; set; }
 
-        public DbSet<Topic> Topics { get; set; }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Topic>()
-       .HasOne(t => t.Course)
-       .WithMany(c => c.Topics)
-       .HasForeignKey(t => t.CourseId)
-       .OnDelete(DeleteBehavior.Cascade);
-        }
-
         public DbSet<Examination> Examinations {  get; set; }
 
         public DbSet<Student> Students { get; set; }
@@ -34,5 +23,7 @@ namespace Symphony_Limited.Data
         public DbSet<Contact> Contacts { get; set; }
 
         public DbSet<Feedback> Feedbacks { get; set; }
+
+        public DbSet<Subject> Subjects { get; set; }
     }
 }

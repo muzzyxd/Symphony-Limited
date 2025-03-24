@@ -1,0 +1,60 @@
+﻿@model List<Symphony_Limited.Models.Subject>
+<div class="untree_co-hero overlay" style="background-image: url('images/img-school-1-min.jpg');">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12">
+                <div class="row justify-content-center ">
+                    <div class="col-lg-6 text-center ">
+                        <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Courses</h1>
+                        <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
+                            <p>Join us at Symphony Ltd. and take the first step towards building a successful career in the IT industry. We are here to guide you every step of the way!</p>
+                        </div>
+
+                        <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a asp-controller="Admin" asp-action="Register" class="btn btn-secondary">Explore courses</a></p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+</div> <!-- /.untree_co-hero -->
+
+<div class="untree_co-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
+                <h2 class="line-bottom text-center mb-4">The Right Course For You</h2>
+                <p>Explore industry-relevant IT courses at Symphony Ltd. and take the first step toward a successful career with expert guidance!</p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var subject in Model)
+            {
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="custom-media mb-3">
+                        <a href="#"><img src="~/images/@subject.SubjectImgName" alt="Image" class="img-fluid"></a>
+                        <div class="custom-media-body">
+                            <div class="d-flex justify-content-between pb-3">
+                                <div class="text-primary"><span class="uil uil-clock"></span> <span>@subject.Duration</span></div>
+                                <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
+                            </div>
+                            <h3>@subject.SubjectName</h3>
+                            <p class="mb-4">@subject.SubjectDescription</p>
+                            <div class="border-top d-flex justify-content-between pt-3 mt-3 align-items-center">
+                                <div><span class="price">$@subject.Fees</span></div>
+                                <div><a asp-controller="Admin" asp-action="Register" class="btn btn-primary">Enroll</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+       
+        </div>
+    </div>
+</div>

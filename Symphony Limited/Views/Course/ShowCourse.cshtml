@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Course>
+﻿@model List<Symphony_Limited.Models.Subject>
 @{
     Layout = "~/Views/shared/_LayoutDashboard.cshtml";
 }
@@ -26,26 +26,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            @foreach (var course in Model)
+                        
+                            @foreach (var subject in Model)
                             {
+                                <tr>
                           
-                                <td>@course.Course_Id</td>
-                                <td>@course.CourseName</td>
-                                <td>@course.CourseDescription</td>
-                                <td>@course.Duration</td>
-                                <td>@course.Fees</td>
-                                <td>@course.CourseImg</td>
-                                <td>@course.Created_at</td>
+                                <td>@subject.Subject_Id</td>
+                                <td>@subject.SubjectName</td>
+                                <td>@subject.SubjectDescription</td>
+                                <td>@subject.Duration</td>
+                                <td>@subject.Fees</td>
+                                <td><img src="~/images/@subject.SubjectImgName" /></td>
+                                <td>@subject.Created_at</td>
                                 <td>
-                                    <a class="btn btn-outline-primary" asp-controller="Course" asp-action="EditCourse" asp-route-id="@course.Course_Id">Edit</a>
+                                    <a class="btn btn-outline-primary" asp-controller="Course" asp-action="EditCourse" asp-route-id="@subject.Subject_Id">Edit</a>
                                     <form class="mt-3" method="post">
-                                        <button class="btn btn-outline-danger" type="submit" asp-controller="Course" asp-action="DeleteCourse" asp-route-id="@course.Course_Id">Delete</button>
+                                        <button class="btn btn-outline-danger" type="submit" asp-controller="Course" asp-action="DeleteCourse" asp-route-id="@subject.Subject_Id">Delete</button>
                                     </form>
-                                </td>
+											</td>
+										</tr>
                             
                             }
-                        </tr>
+                        
                         </tbody>
                         </table>
                         

@@ -8,17 +8,19 @@ namespace Symphony_Limited.Controllers
 {
     public class CourseController : Controller
     {
-            private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _environment;
 
-            public CourseController(ApplicationDbContext context)
-            {
-                _context = context;
-            }
+        public CourseController(ApplicationDbContext context, IWebHostEnvironment environment)
+        {
+            _context = context;
+            _environment = environment;
+        }
 
         public async Task<IActionResult> ShowCourse()
         {
-            var courses = await _context.Courses.ToListAsync();
-            return View(courses);
+            var subject = await _context.Subjects.OrderByDescending(p => p.Subject_Id).ToListAsync();
+            return View(subject);
         }
 
         public IActionResult AddCourse()
@@ -27,70 +29,132 @@ namespace Symphony_Limited.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCourse(Course course)
+        public IActionResult AddCourse(SubjectDto subjectDto)
         {
-            if (ModelState.IsValid)
+            if (subjectDto.ImageFile == null)
             {
-                await _context.Courses.AddAsync(course);
-                _context.SaveChanges();
-                return RedirectToAction("ShowCourse");
+                ModelState.AddModelError("ImageFile", "this image file is req");
             }
-            return View(course);
-        }
 
-        public async Task<IActionResult> EditCourse(int id)
-        {
-            var course = await _context.Courses.FindAsync(id);
-            if (course == null)
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return View(subjectDto);
             }
-            return View(course);
-        }
 
-        [HttpPost]
-        public async Task<IActionResult> EditCourse(Course course)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Courses.Update(course);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("ShowCourse");
-            }
-            return View(course);
-        }
+            string newFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            newFileName += Path.GetExtension(subjectDto.ImageFile!.FileName);
 
-        [HttpPost]
-        public async Task<IActionResult> DeleteCourse(int id)
-        {
-            var course = await _context.Courses.FindAsync(id);
-            if (course != null)
+            string SubjectImgName = _environment.WebRootPath + "/images/" + newFileName;
+            using (var stream = System.IO.File.Create(SubjectImgName))
             {
-                _context.Courses.Remove(course);
-                await _context.SaveChangesAsync();
+                subjectDto.ImageFile.CopyTo(stream);
+
             }
+
+            Subject subject = new Subject()
+            {
+                SubjectName = subjectDto.SubjectName,
+                SubjectDescription = subjectDto.SubjectDescription,
+                Duration = subjectDto.Duration,
+                Fees = subjectDto.Fees,
+                SubjectImgName = newFileName,
+                Created_at = DateTime.Now
+
+            };
+            _context.Subjects.Add(subject);
+            _context.SaveChanges();
+
+
             return RedirectToAction("ShowCourse");
         }
 
-        public async Task<IActionResult> AddTopic()
+        public IActionResult EditCourse(int id)
         {
-            ViewData["CourseId"] = new SelectList(await _context.Courses.ToListAsync(), "CourseId", "CourseName");
-            return View();
+            var subject = _context.Subjects.Find(id);
+
+            if (subject == null)
+            {
+                return RedirectToAction("ShowCourse","Course");
+            }
+
+            var subjectDto = new SubjectDto()
+            {
+                SubjectName = subject.SubjectName,
+                SubjectDescription = subject.SubjectDescription,
+                Duration = subject.Duration,
+                Fees = subject.Fees,
+            };
+
+            ViewData["Subject_Id"] = subject.Subject_Id;
+            ViewData["SubjectImgName"] = subject.SubjectImgName;
+            ViewData["Created_At"] = subject.Created_at.ToString("MM/dd/yyyy");
+
+            return View(subjectDto);
         }
 
-        
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddTopic([Bind("TopicId,TopicName,CourseId")] Topic topic)
+        public IActionResult EditCourse(int id, SubjectDto subjectDto)
         {
-            if (ModelState.IsValid)
+            var subject = _context.Subjects.Find(id);
+
+            if (subject == null)
             {
-                _context.Add(topic);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(ShowCourse));
+                return RedirectToAction("ShowCourse", "Course");
             }
-            ViewData["CourseId"] = new SelectList(await _context.Courses.ToListAsync(), "CourseId", "CourseName", topic.CourseId);
-            return View(topic);
+            if (!ModelState.IsValid)
+            {
+                ViewData["Subject_Id"] = subject.Subject_Id;
+                ViewData["SubjectImgName"] = subject.SubjectImgName;
+                ViewData["Created_at"] = subject.Created_at.ToString("dd/MM/yyyy");
+
+                return View(subjectDto);
+            }
+
+            string newFileName = subject.SubjectImgName;
+            if(subjectDto.ImageFile != null)
+            {
+                newFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+                newFileName += Path.GetExtension(subjectDto.ImageFile.FileName);
+
+                string SubjectImgName = _environment.WebRootPath + "/images/" + newFileName;
+                using (var stream = System.IO.File.Create(SubjectImgName))
+                {
+                    subjectDto.ImageFile.CopyTo(stream);
+
+                }
+
+                string oldSubjectImgName = _environment.WebRootPath + "/images/" + subject.SubjectImgName;
+                System.IO.File.Delete(oldSubjectImgName);
+            }
+
+            subject.SubjectName = subjectDto.SubjectName;
+            subject.SubjectDescription = subjectDto.SubjectDescription;
+            subject.Duration = subjectDto.Duration;
+            subject.Fees = subjectDto.Fees;
+            subject.SubjectImgName = newFileName;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("ShowCourse", "Course");
         }
+
+        public IActionResult DeleteCourse(int id)
+        {
+            var subject = _context.Subjects.Find(id);
+            if (subject == null)
+            {
+                return RedirectToAction("ShowCourse","Course");
+            }
+            string SubjectImgName = _environment.WebRootPath + "/images/" + subject.SubjectImgName;
+            System.IO.File.Delete(SubjectImgName);
+
+            _context.Subjects.Remove(subject);
+            _context.SaveChanges(true);
+
+            return RedirectToAction("ShowCourse", "Course");
+        }
+
+
     }
-}
+ }
+    

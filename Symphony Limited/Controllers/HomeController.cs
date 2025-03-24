@@ -20,8 +20,8 @@ namespace Symphony_Limited.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var contact = await _context.Contacts.ToListAsync();
-            return View(contact);
+            var subject = await _context.Subjects.OrderByDescending(p => p.Subject_Id).ToListAsync();
+            return View(subject);
         }
 
         public IActionResult Privacy()
@@ -58,11 +58,28 @@ namespace Symphony_Limited.Controllers
             return View(examinations);
         }
 
-        public async Task<IActionResult> ExamResult()
+        public IActionResult ExamResult(string rollNumber)
         {
-            var student = await _context.Students.ToListAsync();
-            return View(student);
+            if (!string.IsNullOrEmpty(rollNumber))
+            {
+                var student = _context.Students.FirstOrDefault(s => s.RollNumber == rollNumber);
+
+                if (student == null)
+                {
+                    ViewBag.Message = "Roll number not found."; // Set an error message
+                }
+                return View("ExamResult", student);
+            }
+
+            return View();
         }
+
+        public  async Task<IActionResult> Courses()
+        {
+            var subject = await _context.Subjects.OrderByDescending(p => p.Subject_Id).ToListAsync();
+            return View(subject);
+        }
+
 
         public IActionResult Contact()
         {
